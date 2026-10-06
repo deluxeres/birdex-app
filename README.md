@@ -36,7 +36,7 @@ These are contract examples, not production statistics. The service validates re
 
 ## Deployment
 
-Deploy `dist/` to your existing hosting provider. Configure SPA fallback to `index.html` for `/season`, `/rewards`, and `/docs`. Place the public website at its own domain/subdomain to keep it separate from the Mini App and admin. No deployment was performed.
+Deploy `dist/` to your existing hosting provider. Configure SPA fallback to `index.html` for `/season`, `/rewards`, and `/docs`. Place the public website at its own domain/subdomain to keep it separate from the Mini App and admin. The public website is deployed at https://birdex-app.andreyymka533.workers.dev.
 
 The phone artwork was supplied by the project owner and converted to transparent WebP. Reward language intentionally makes no guaranteed payout claims. Google Fonts has a system-font fallback; self-host fonts if external font requests are unsuitable.
 
