@@ -1,0 +1,3 @@
+import type { CSSProperties } from 'react';
+export function Telegram({ size = 18 }: { size?: number }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.4 18.3 20c-.2 1-1 1.2-1.8.6l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 6c.4-.4-.1-.6-.6-.3L5.7 13.1.8 11.6c-1.1-.3-1.1-1.1.2-1.6L20 2.7c.9-.3 1.7.2 1.5.7Z"/></svg>; }
+export function Ton({ style }: { style?: CSSProperties }) { return <span className="ton-icon" style={style}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16L12 20 4 5Zm8 0v15" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg></span>; }

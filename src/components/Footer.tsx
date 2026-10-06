@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom';
+import { SocialLink } from './AppLink';
+export function Footer({onMissing}:{onMissing:()=>void}) {return <footer className="footer"><div className="footer-main"><Link className="footer-brand" to="/">BIRDEX</Link><span>© {new Date().getFullYear()} BIRDEX. All rights reserved.</span><div className="footer-links"><SocialLink kind="TELEGRAM" onMissing={onMissing}>Telegram</SocialLink><SocialLink kind="X" onMissing={onMissing}>X</SocialLink><Link to="/docs">Docs</Link></div></div><div className="footer-bottom"><span>JUST A CHICKEN THING.</span><span><i/>build v0.1.0 / {import.meta.env.DEV?'dev':'prod'}</span></div></footer>;}

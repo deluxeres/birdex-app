@@ -1,0 +1,34 @@
+/* Motion-only overrides: preserve all existing layout, fonts, and theme colors. */
+html{transition:background-color .38s,color .38s}
+body{isolation:isolate}
+.particle-background{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.particle-background canvas{display:block;width:100%;height:100%;pointer-events:none}
+.cursor-dot,.cursor-ring{--cursor-ink:#111214;--cursor-shadow:rgba(255,255,255,.28);--cursor-label-bg:rgba(247,247,244,.96)}
+.cursor-dot[data-tone=light],.cursor-ring[data-tone=light]{--cursor-ink:#f4f4f1;--cursor-shadow:rgba(0,0,0,.28);--cursor-label-bg:rgba(17,18,20,.96)}
+.cursor-dot[data-button=true][data-tone=light],.cursor-ring[data-button=true][data-tone=light]{--cursor-ink:#f9d548}
+.cursor-dot{width:4px;height:4px;background:var(--cursor-ink);box-shadow:0 0 1px var(--cursor-shadow);transition:opacity .16s,background-color .18s}
+.cursor-ring{width:26px;height:26px;border-color:var(--cursor-ink);color:var(--cursor-ink);background:transparent;font:7px monospace;box-shadow:0 0 1px var(--cursor-shadow);transition:width .2s,height .2s,opacity .16s,border-color .18s,color .18s}
+.cursor-ring[data-interactive=true]{width:40px;height:40px}
+.cursor-ring span{position:static;display:block;padding:2px 3px;border-radius:3px;background:var(--cursor-label-bg);color:var(--cursor-ink);font:700 9px/1.2 monospace;letter-spacing:.04em;text-align:center;white-space:nowrap;pointer-events:none}
+.cursor-ring span:empty{display:none}
+.cursor-ring[data-label="↗"] span{font-size:14px;line-height:1;padding:1px 4px;letter-spacing:0}
+.pointer-active .cursor-dot[data-labelled=true]{opacity:0}
+.navigation{position:relative}
+.navigation a.active:before,.navigation a.active:after{display:none}
+.navigation-indicator{position:absolute;bottom:0;left:0;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#ddba2f;pointer-events:none;transition:transform .24s cubic-bezier(.22,1,.36,1),opacity .2s}
+.navigation-indicator:before{content:'';position:absolute;bottom:2px;left:-13px;width:31px;height:1px;background:#ddba2f;opacity:.6}
+.hero-art [data-depth]{transform:translate3d(var(--parallax-x,0px),var(--parallax-y,0px),0)}
+.hero-art .crown-one[data-depth]{transform:translate3d(var(--parallax-x,0px),var(--parallax-y,0px),0) rotate(-16deg)}
+.mascot-layer[data-depth]{transition:none}
+.metric,.season-card{position:relative}
+.metric:after,.season-card:after{content:'';position:absolute;inset:0;border:1px solid transparent;border-radius:inherit;pointer-events:none;background:radial-gradient(180px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(198,166,71,.18),transparent 70%) border-box;mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);mask-composite:exclude;opacity:0;transition:opacity .2s}
+.metric:hover:after,.season-card:hover:after{opacity:1}
+.surface,.metric-icon,.progress-track,.action-divider,.community-avatars>span,.link-dialog{transition:background-color .38s,border-color .38s,color .38s,transform .25s}
+.button{transition:background-color .22s,color .22s,border-color .22s,box-shadow .22s;user-select:none}
+.hero-description,.hero h2,.eyebrow,.metric-label,.metric strong,.metric-note,.season-time,.status,.section-kicker,.footer,.footer-links,.phone-top,.handwritten,.art-caption,.page-heading p,.info-card p,.rewards-card p,.docs-list p{transition:color .38s}
+.theme-switch svg{animation:theme-icon-in .32s cubic-bezier(.22,1,.36,1)}
+@keyframes theme-icon-in{from{transform:rotate(-35deg) scale(.7);opacity:.4}to{transform:rotate(0) scale(1);opacity:1}}
+@media(max-width:767px),(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+@media(max-width:599px){.particle-background{display:none}}
+@media(max-width:600px){.navigation{position:absolute}.navigation-indicator{bottom:20px}}
+@media(prefers-reduced-motion:reduce){.particle-background{display:none!important}.hero-art [data-depth]{transform:none!important}.hero-art .crown-one[data-depth]{transform:rotate(-16deg)!important}.metric:after,.season-card:after{display:none}html{transition:none}}

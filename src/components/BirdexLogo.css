@@ -1,0 +1,10 @@
+.birdex-logo{position:relative;display:inline-flex;align-items:center;gap:9px;flex-shrink:0;color:#111;line-height:1}
+.birdex-mascot{position:relative;display:block;width:44px;height:44px;flex:0 0 44px;overflow:visible}
+.logo-transform,.logo-layer{position:absolute;inset:0;display:block;pointer-events:none}
+.logo-layer svg,.logo-transform>svg{display:block;width:100%;height:100%;overflow:visible}
+.birdex-wordmark{font-family:Manrope,sans-serif;font-size:24px;font-weight:800;letter-spacing:-1px}
+:root[data-theme=dark] .birdex-logo{color:#f5f5f2}
+.logo-golden-egg{position:absolute;left:33px;top:24px;width:14px;height:18px;opacity:0;visibility:hidden;pointer-events:none}
+@media(max-width:800px){.birdex-mascot{width:36px;height:36px;flex-basis:36px}.birdex-wordmark{font-size:21px}.logo-golden-egg{left:27px;top:21px}}
+@media(max-width:600px){.birdex-mascot{width:34px;height:34px;flex-basis:34px}}
+@media(prefers-reduced-motion:reduce){.birdex-logo .logo-transform,.birdex-logo .logo-layer{transform:none!important}.logo-golden-egg{display:none}}
