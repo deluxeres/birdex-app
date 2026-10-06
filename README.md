@@ -80,3 +80,19 @@ BirdexLogo uses the owner-supplied transparent logo-mascot.png, isolated with SV
 Idle motion uses different 3.7–4.9 second periods and one randomly scheduled 5–12 second gesture via delayedCall, rescheduled after completion. Mouse tracking uses quickTo with capped 2.5 px / 2 px translation and 3 degree rotation; it is disabled for touch. Clicking navigates to Home immediately while the persistent Header completes a 540 ms reaction. Five clicks within 1.5 seconds reveal a small vector golden egg for 700 ms.
 
 Animation pauses while the document is hidden. Dynamic reduced-motion preferences disable animation entirely. gsap.context reverts animations and all event/media listeners are removed on unmount. Mascot size is 44 px desktop and 34 px mobile, without changing header height. GSAP is packaged in a separate vendor chunk. Twenty tests and the production build pass, including pointer limits, touch/reduced-motion behavior, navigation and cleanup.
+
+## Cloudflare Workers
+
+The repository includes wrangler.jsonc with the exact Worker name birdex-app. Static files come from dist; SPA fallback serves /season, /rewards and /docs. No Mini App database or domain binding is required for this website.
+
+For a Git-connected Cloudflare Worker, use:
+
+- Repository: deluxeres/birdex-app
+- Production branch: main
+- Root directory: repository root (/)
+- Build command: npm run build
+- Deploy command: npx wrangler deploy
+
+The public .env.production file supplies the API and Telegram URLs during the Vite build. VITE_* values are public browser configuration, not secrets. Override them in Cloudflare build variables when needed; Worker runtime secrets do not configure an already-built Vite client.
+
+For local deployment, authenticate in the correct Cloudflare account and run npm run deploy. With multiple accounts, set CLOUDFLARE_ACCOUNT_ID to the account that owns this Worker. If the dashboard says Failed to find Worker before the first successful deployment, verify that this is a Workers project, its account and Worker name are correct, and its latest build has completed.

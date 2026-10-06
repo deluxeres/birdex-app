@@ -4,6 +4,9 @@ dist/
 *.local
 .env.*
 !.env.example
+!.env.production
+.wrangler/
+.dev.vars*
 *.tsbuildinfo
 artifacts/
 /*.jpg
